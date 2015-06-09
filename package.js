@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Ultimate MVC - The Ultimate Toolset of Uniform Classes for Meteor",
-  version: "0.0.4",
+  version: "0.0.6",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-mvc"
 });
@@ -18,13 +18,19 @@ Package.on_use(function (api, where) {
 	]);
 
 
+	api.imply([
+		'aldeed:simple-schema@1.3.0',
+		'aldeed:autoform@4.2.2',
+		'mrt:moment@2.8.1'
+	]);
+
 	
 	
 	api.add_files([
 		'lib/overrides/string_methods.js',
 		'lib/overrides/underscore_mixin.js',
 		'lib/overrides/meteor_overrides.js',
-	], ['client', 'server']);
+	]);
 	
 	
 	/** INHERITANCE & ULTIMATECLASS CORE **/
@@ -56,7 +62,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_http/extend_ultimate_class.js'
   ], ['client', 'server']);
 
-  api.export(['Ultimate', 'UltimateClass', 'UltimateClone'], ['client', 'server']);
+  api.export(['Ultimate', 'UltimateClass', 'UltimateClone']);
 	
 	
 	
@@ -88,9 +94,9 @@ Package.on_use(function (api, where) {
 	]);
 		
 	
-	api.use([
+	api.imply([
 	  'iron:router@1.0.5'
-	], ['client', 'server']);
+	]);
 	
 	
 	api.add_files([
@@ -105,7 +111,7 @@ Package.on_use(function (api, where) {
     'lib/facades/ultimate_email.js',
 
     'lib/ultimate_behavior/ultimate_behavior.js' //depends on ultimate_facade too
-	], ['client', 'server']);
+	]);
 	
 	
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
@@ -113,9 +119,12 @@ Package.on_use(function (api, where) {
 	api.use([
 		'matb33:collection-hooks@0.7.9',
 		'smeevil:session-store@1.0.0',
-		'alanning:roles@1.2.12',
 		'meteorhacks:aggregate@1.2.1',
 		'meteorhacks:subs-manager@1.3.0'
+	]);
+
+	api.imply([
+		'alanning:roles@1.2.12',
 	]);
 	
 	api.add_files([
@@ -126,9 +135,9 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_model/ultimate_model.js',
 		'lib/ultimate_model/additional_methods.js',
 
-  	], ['client', 'server']);
+  	]);
 
-	api.export(['UltimateForm', 'UltimateModel'], ['client', 'server']);
+	api.export(['UltimateForm', 'UltimateModel']);
 
 
 	api.add_files([
@@ -195,7 +204,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_user/ultimate_user.js'
 
   	], ['client', 'server']);
-  	api.export(['UltimateUser'], ['client', 'server']);
+  	api.export(['UltimateUser']);
 
 		
 	/** UTILITIES **/
@@ -218,12 +227,15 @@ Package.on_use(function (api, where) {
 	api.use([
 	  	'tracker',
 	  	'session',
-		'naxio:flash@0.2.2',
-		'percolate:velocityjs@1.2.1_1',
 		'aldeed:template-extension@3.4.3'
 	], 'client');
 
 
+	api.imply([
+		'naxio:flash@0.2.2',
+		'channikhabra:block-ui@0.2.2',
+		'percolate:velocityjs@1.2.1_1',
+	]);
 
 	api.addFiles([
 		'lib/ultimate_modal/ultimate_modal.js',
@@ -265,12 +277,12 @@ Package.on_use(function (api, where) {
 
 	api.imply([
 		'ultimateide:tabular@1.2.2'
-	], ['client', 'server']);
+	]);
 
 	api.addFiles([
 		'lib/ultimate_datatable_component/ultimate_datatable_component.js',
 		'lib/ultimate_datatable_component/datatable_methods.js',
-	], ['client', 'server']);
+	]);
 
 	api.addFiles([
     	'lib/ultimate_datatable_component/ultimate_datatable_component.html'
