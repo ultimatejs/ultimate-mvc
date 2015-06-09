@@ -1,8 +1,8 @@
 Package.describe({
-  summary: "MVC-like models in Meteor & A Lot More",
-  version: "0.0.2",
+  summary: "Ultimate MVC - The Ultimate Toolset of Uniform Classes for Meteor",
+  version: "0.0.4",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
-  name: "ultimateide:ultimate-models"
+  name: "ultimateide:ultimate-mvc"
 });
 
 Package.on_use(function (api, where) {
@@ -264,7 +264,7 @@ Package.on_use(function (api, where) {
 
 
 	api.imply([
-		'ultimateide:tabular@1.2.1'
+		'ultimateide:tabular@1.2.2'
 	], ['client', 'server']);
 
 	api.addFiles([
