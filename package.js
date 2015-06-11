@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Ultimate MVC - The Ultimate Toolset of Uniform Classes for Meteor",
-  version: "0.0.9",
+  version: "0.0.10",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-mvc"
 });
@@ -47,9 +47,10 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_class/ultimate_class.js',
 		'lib/ultimate_class/extend.js',
 		'lib/ultimate_class/behavior.js',
-    	'lib/ultimate_class/events.js',
+    'lib/ultimate_class/events.js',
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
+		'lib/ultimate_class/additional_methods.js',
 
     	'lib/ultimate_clone/ultimate_clone.js',
     	'lib/ultimate_utilities/ultimate_utilities.js',
@@ -276,7 +277,7 @@ Package.on_use(function (api, where) {
 
 
 	api.imply([
-		'ultimateide:tabular@1.2.2'
+		'ultimateide:tabular@1.2.3'
 	]);
 
 	api.addFiles([
