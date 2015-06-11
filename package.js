@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Ultimate MVC - The Ultimate Toolset of Uniform Classes for Meteor",
-  version: "0.0.10",
+  version: "0.0.11",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-mvc"
 });
