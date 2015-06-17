@@ -39,9 +39,10 @@ Package.on_use(function (api, where) {
 		'lib/ultimate/ultimate.js',
 		'lib/ultimate/extends.js',
 		'lib/ultimate/add_methods.js',
-    	'lib/ultimate/setup_misc.js',
+    'lib/ultimate/setup_misc.js',
 		'lib/ultimate/setup_form.js',
 		'lib/ultimate/setup_model.js',
+		'lib/ultimate/ultimate_double.js',
 
 
 		'lib/ultimate_class/ultimate_class.js',
@@ -52,8 +53,8 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_class/timer.js',
 		'lib/ultimate_class/additional_methods.js',
 
-    	'lib/ultimate_clone/ultimate_clone.js',
-    	'lib/ultimate_utilities/ultimate_utilities.js',
+  	'lib/ultimate_clone/ultimate_clone.js',
+  	'lib/ultimate_utilities/ultimate_utilities.js',
 
 		'lib/ultimate_http/ultimate_http.js',
 		'lib/ultimate_http/meteor_method.js',

@@ -21,13 +21,32 @@
                 {{#if subtitle}}<h4>{{subtitle}}</h4>{{/if}}
                 {{#if description}}<p>{{description}}</p>{{/if}}
 
-								{{#if formData}}
-									{{>ultimate_form formData}}
-								{{/if}}
-								
-								{{#if currentTemplate}}
-									{{>Template.dynamic template=currentTemplate data=currentContext}}
-								{{/if}}
+
+								<div class="row">
+									{{#unless columnLayout}}
+										{{#if formData}}
+												{{>ultimate_form formData}}
+										{{/if}}
+								  
+										{{#if currentTemplate}}
+											{{>Template.dynamic template=currentTemplate data=currentContext}}
+										{{/if}}
+									{{else}}
+										{{#if formData}}
+											<div class="col-md-5">
+												{{>ultimate_form formData}}
+											</div>
+										{{/if}}
+									
+								  
+										{{#if currentTemplate}}
+										<div class="col-md-7">
+											{{>Template.dynamic template=currentTemplate data=currentContext}}
+										</div>
+										{{/if}}
+									{{/unless}}
+								</div>
+		
             </div>
 						
 						
