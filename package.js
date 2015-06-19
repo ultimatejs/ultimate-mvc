@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Ultimate MVC - The Ultimate Toolset of Uniform Classes for Meteor",
-  version: "0.0.15",
+  version: "0.0.16",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-mvc"
 });
@@ -119,7 +119,7 @@ Package.on_use(function (api, where) {
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
 	api.use([
-		'matb33:collection-hooks@0.7.9',
+		'ultimateide:collection-hooks@0.7.14',
 		'smeevil:session-store@1.0.0',
 		'meteorhacks:aggregate@1.2.1',
 		'meteorhacks:subs-manager@1.3.0'
