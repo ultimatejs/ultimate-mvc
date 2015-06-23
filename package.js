@@ -51,7 +51,8 @@ Package.on_use(function (api, where) {
     'lib/ultimate_class/events.js',
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
-		'lib/ultimate_class/additional_methods.js',
+		'lib/ultimate_class/format_dates.js',
+		'lib/ultimate_class/format_money.js',
 
   	'lib/ultimate_clone/ultimate_clone.js',
   	'lib/ultimate_utilities/ultimate_utilities.js',
@@ -104,13 +105,13 @@ Package.on_use(function (api, where) {
 	api.add_files([
 		'lib/ultimate_facade/ultimate_facade.js',
 
-		'lib/facades/ultimate_startup.js',
-		'lib/facades/ultimate_config.js',
-		'lib/facades/ultimate_accounts.js',
-		'lib/facades/ultimate_permissions.js',
-		'lib/facades/ultimate_router.js',
-		'lib/facades/ultimate_publish.js',
-    'lib/facades/ultimate_email.js',
+		'lib/ultimate_startup/ultimate_startup.js',
+		'lib/ultimate_config/ultimate_config.js',
+		'lib/ultimate_accounts/ultimate_accounts.js',
+		'lib/ultimate_permissions/ultimate_permissions.js',
+		'lib/ultimate_router/ultimate_router.js',
+		'lib/ultimate_publish/ultimate_publish.js',
+    'lib/ultimate_email/ultimate_email.js',
 
     'lib/ultimate_behavior/ultimate_behavior.js' //depends on ultimate_facade too
 	]);
@@ -206,8 +207,16 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_user/ultimate_user.js'
 
   	], ['client', 'server']);
-  	api.export(['UltimateUser']);
+  api.export(['UltimateUser']);
 
+
+
+	api.add_files([
+		'lib/ultimate_app/ultimate_app.js'
+  	], ['client', 'server']);
+  api.export(['UltimateApp']);
+		
+		
 		
 	/** UTILITIES **/
 	
@@ -229,9 +238,11 @@ Package.on_use(function (api, where) {
 	api.use([
 	  	'tracker',
 	  	'session',
-		'aldeed:template-extension@3.4.3'
 	], 'client');
 
+	api.imply([
+		'aldeed:template-extension@3.4.3'
+	], 'client');
 
 	api.imply([
 		'naxio:flash@0.2.2',
@@ -252,8 +263,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_modal/ultimate_modal_wizard.js',
 		'lib/ultimate_modal/ultimate_modal_tabbed.js',
 		
-	  	'lib/ultimate_modal/templates.html',
-		'lib/ultimate_modal/templates.js',
+	  'lib/ultimate_modal/templates.html',
 
 
 	  	'lib/ultimate_wizard/ultimate_wizard.js',
@@ -272,7 +282,9 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_component/instance_data.js',
 		'lib/ultimate_component/mixins.js',
 		
-		'lib/ultimate_component/selected_helper.js'
+		'lib/ultimate_component/selected_helper.js',
+		
+		'lib/ultimate_component/templates.html',
 
 	], 'client');
 
@@ -302,4 +314,36 @@ Package.on_use(function (api, where) {
 		'UltimateWizards',
 		'UltimateWizard'
 	], ['client']);
+	
+	
+	
+	/** ULTIMATE CHART **/
+	
+	api.use("sergeyt:d3@3.4.1", 'client');
+	api.use("peernohell:c3@1.1.3", 'client');
+
+	
+	api.use([
+		"sergeyt:d3@3.4.1",
+		"peernohell:c3@1.1.3",
+		'aldeed:template-extension@3.4.3'
+	], 'client');
+	
+	api.use('templating');
+
+
+	api.add_files('lib/ultimate_chart/templates.html', "client");
+	api.add_files('lib/ultimate_chart/ultimate_chart.js', "client");
+	
+	
+	
+	/** ULTIMATE BRAINTREE **/
+	
+	api.use([
+		"sergeyt:d3@3.4.1",
+		"peernohell:c3@1.1.3",
+		'aldeed:template-extension@3.4.3',
+	]);
+	
+	api.add_files('lib/ultimate_braintree/ultimate_braintree.js');
 });
