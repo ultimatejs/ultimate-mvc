@@ -325,13 +325,17 @@ Package.on_use(function (api, where) {
 	
 	api.use([
 		"sergeyt:d3@3.4.1",
-		"peernohell:c3@1.1.3",
 		'aldeed:template-extension@3.4.3'
 	], 'client');
 	
 	api.use('templating');
 
 
+	api.add_files([
+	    'lib/ultimate_chart/c3/c3.min.js',
+	    'lib/ultimate_chart/c3/c3.css'
+	  ], 'client');
+		
 	api.add_files('lib/ultimate_chart/templates.html', "client");
 	api.add_files('lib/ultimate_chart/ultimate_chart.js', "client");
 	
@@ -339,11 +343,6 @@ Package.on_use(function (api, where) {
 	
 	/** ULTIMATE BRAINTREE **/
 	
-	api.use([
-		"sergeyt:d3@3.4.1",
-		"peernohell:c3@1.1.3",
-		'aldeed:template-extension@3.4.3',
-	]);
 	
 	api.add_files('lib/ultimate_braintree/ultimate_braintree.js');
 });
