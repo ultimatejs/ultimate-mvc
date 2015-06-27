@@ -72,7 +72,8 @@ Package.on_use(function (api, where) {
 	Npm.depends({
 		"remote-exec": "0.0.3",
 		'async': '0.9.0',
-		"ssh2": "0.2.14"
+		"ssh2": "0.2.14",
+		"braintree": "1.26.0"
 	});
 	
 	api.add_files([
@@ -347,7 +348,6 @@ Package.on_use(function (api, where) {
 	
 	
 	/** ULTIMATE BRAINTREE **/
-	
-	
+		
 	api.add_files('lib/ultimate_braintree/ultimate_braintree.js');
 });
