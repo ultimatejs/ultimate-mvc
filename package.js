@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Ultimate MVC - The Ultimate Toolset of Uniform Classes for Meteor",
-  version: "0.0.19",
+  version: "0.0.20",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-mvc"
 });
@@ -193,10 +193,15 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_aggregate/create_groupby_methods_helper.js',
 
 		'lib/ultimate_aggregate/aggregate_publisher.js',
+		'lib/ultimate_aggregate/observe_aggregates.js',
+		'lib/ultimate_aggregate/on_stop.js',
+		
 		'lib/ultimate_aggregate/aggregate_collection_publisher.js',
+		
 		'lib/ultimate_aggregate/aggregate_relations_publisher.js',
+		'lib/ultimate_aggregate/optimize_results.js',
+		
 		'lib/ultimate_aggregate/aggregate_relations_standalone_publisher.js',
-
   	], ['client', 'server']);
 
 
