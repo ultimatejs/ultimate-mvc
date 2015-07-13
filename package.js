@@ -193,11 +193,11 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_aggregate/helper_instance.js',
 		'lib/ultimate_aggregate/helper_groupby.js',
 
-		'lib/ultimate_aggregate/observer_aggregate.js',
+		'lib/ultimate_aggregate/observer.js',
 		'lib/ultimate_aggregate/observer_collection.js',
-		'lib/ultimate_aggregate/observer_relation.js.js',
+		'lib/ultimate_aggregate/observer_relation.js',
 
-		'lib/ultimate_aggregate/publisher_collection.js.js',
+		'lib/ultimate_aggregate/publisher_collection.js',
   	], ['client', 'server']);
 
 
