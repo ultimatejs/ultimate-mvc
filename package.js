@@ -21,7 +21,8 @@ Package.on_use(function (api, where) {
 	api.imply([
 		'aldeed:simple-schema@1.3.0',
 		'aldeed:autoform@4.2.2',
-		'mrt:moment@2.8.1'
+		'mrt:moment@2.8.1',
+		'meteorhacks:unblock@1.1.0'
 	]);
 
 	
