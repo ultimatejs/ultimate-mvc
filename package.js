@@ -100,7 +100,8 @@ Package.on_use(function (api, where) {
 		
 	
 	api.imply([
-	  'iron:router@1.0.5'
+	  'iron:router@1.0.5',
+		'cmather:handlebars-server' //for ultimate_email
 	]);
 	
 	
