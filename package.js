@@ -277,6 +277,12 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_events/ultimate_events.js',
 		
 		'lib/ultimate_component/ultimate_component_parent.js',
+		
+		'lib/ultimate_component/callbacks.js',
+		'lib/ultimate_component/helpers.js',
+		'lib/ultimate_component/events.js',
+		'lib/ultimate_component/animation.js',
+		
 		'lib/ultimate_component/ultimate_component.js',
 		'lib/ultimate_component/ultimate_component_model.js',
 		
