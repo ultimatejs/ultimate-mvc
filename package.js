@@ -139,6 +139,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_form/reactive_methods.js',
 
 		'lib/ultimate_model/ultimate_model.js',
+		'lib/ultimate_model/client_methods.js',
 		'lib/ultimate_model/additional_methods.js',
 
   	]);
