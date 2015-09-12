@@ -16,7 +16,7 @@ Package.on_use(function (api, where) {
 		'aldeed:autoform@4.2.2',
 		'reactive-dict'
 	]);
-
+	api.imply(['reactive-dict']);
 
 	api.imply([
 		'aldeed:simple-schema@1.3.0',
@@ -101,9 +101,12 @@ Package.on_use(function (api, where) {
 	
 	api.imply([
 	  'iron:router@1.0.5',
-		'cmather:handlebars-server' //for ultimate_email
+		'cmather:handlebars-server@0.2.0'
 	]);
 	
+	api.use([
+		'cmather:handlebars-server@0.2.0' //for ultimate_email
+	]);
 	
 	api.add_files([
 		'lib/ultimate_facade/ultimate_facade.js',
