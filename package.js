@@ -357,4 +357,14 @@ Package.on_use(function (api, where) {
 	/** ULTIMATE BRAINTREE **/
 		
 	api.add_files('lib/ultimate_braintree/ultimate_braintree.js');
+	
+	
+	//api.use('isobuild:compiler-plugin@1.0.0');
 });
+
+/**
+Package.registerBuildPlugin({
+  name: 'compile-ultimate',
+  sources: ['plugin.js']
+});
+**/
