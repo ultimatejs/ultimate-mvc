@@ -395,5 +395,5 @@ Package.on_use(function (api, where) {
 Package.registerBuildPlugin({
   name: 'compile-ultimate-ecmascript',
   use: ['babel-compiler'],
-  sources: ['ultimate_ecmascript/ultimate_transpilation.js', 'ultimate_ecmascript/plugin.js']
+  sources: ['lib/ultimate_ecmascript/ultimate_transpilation.js', 'lib/ultimate_ecmascript/plugin.js']
 });
