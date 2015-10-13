@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-  api.versionsFrom('METEOR@1.0');
+  api.versionsFrom('METEOR@1.2');
   api.use([
 		"underscore",
     	'templating',
@@ -70,16 +70,7 @@ Package.on_use(function (api, where) {
 	
 	
 	
-	Npm.depends({
-		"remote-exec": "0.0.3",
-		'async': '0.9.0',
-		"ssh2": "0.2.14",
-		"braintree": "1.26.0"
-	});
 	
-	api.add_files([
-		'lib/ultimate_exec/ultimate_exec.js'
-	], ['server']);
 	
 	
 	/** ULTIMATE_REACTIVE **/
@@ -104,9 +95,7 @@ Package.on_use(function (api, where) {
 		'cmather:handlebars-server@0.2.0'
 	]);
 	
-	api.use([
-		'cmather:handlebars-server@0.2.0' //for ultimate_email
-	]);
+
 	
 	api.add_files([
 		'lib/ultimate_facade/ultimate_facade.js',
@@ -122,6 +111,18 @@ Package.on_use(function (api, where) {
     'lib/ultimate_behavior/ultimate_behavior.js' //depends on ultimate_facade too
 	]);
 	
+	api.export([
+		'UltimateFacade',
+		'UltimateStartup',
+		'UltimateConfig',
+		'UltimateAccounts',
+		'UltimatePermissions',
+		'UltimateRouter',
+		'UltimateRouterServer',
+		'UltimatePublish',
+		'UltimateEmail',
+		'UltimateBehavior'
+	]);
 	
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
@@ -214,6 +215,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_user/ultimate_user.js'
 
   	], ['client', 'server']);
+		
   api.export(['UltimateUser']);
 
 
@@ -221,11 +223,19 @@ Package.on_use(function (api, where) {
 	api.add_files([
 		'lib/ultimate_app/ultimate_app.js'
   	], ['client', 'server']);
+		
   api.export(['UltimateApp']);
 		
 		
 		
 	/** UTILITIES **/
+	
+	Npm.depends({
+		"remote-exec": "0.0.3",
+		'async': '0.9.0',
+		"ssh2": "0.2.14",
+		"braintree": "1.26.0"
+	});
 	
 	api.add_files([
 		'lib/ultimate_sync/ultimate_sync.js',
@@ -325,8 +335,15 @@ Package.on_use(function (api, where) {
 		'UltimateModalTabbed', 
 		'UltimateModalWizard',
 		'UltimateWizards',
-		'UltimateWizard'
+		'UltimateWizard',
+		
+		'UltimateComponent',
+		'UltimateComponentModel'
 	], ['client']);
+	
+	api.export([ 
+		'UltimateDatatableComponent'
+	], ['client', 'server']);
 	
 	
 	
@@ -344,7 +361,7 @@ Package.on_use(function (api, where) {
 	api.use('templating');
 
 
-	api.add_files([
+	api.addAssets([
 	    'lib/ultimate_chart/c3/c3.min.js',
 	    'lib/ultimate_chart/c3/c3.css'
 	  ], 'client');
@@ -353,13 +370,23 @@ Package.on_use(function (api, where) {
 	api.add_files('lib/ultimate_chart/ultimate_chart.js', "client");
 	
 	
+	api.export([
+		'UltimateChart',
+	], ['client']);
 	
 	/** ULTIMATE BRAINTREE **/
 		
 	api.add_files('lib/ultimate_braintree/ultimate_braintree.js');
+	api.export([
+		'UltimateBraintree',
+		'Chim'
+	]);
 	
+	/**
+	api.use('isobuild:compiler-plugin@1.0.0');
+	**/
 	
-	//api.use('isobuild:compiler-plugin@1.0.0');
+	api.use('ultimate-ecmascript');
 });
 
 /**
