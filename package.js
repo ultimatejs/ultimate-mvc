@@ -386,12 +386,14 @@ Package.on_use(function (api, where) {
 	api.use('isobuild:compiler-plugin@1.0.0');
 	**/
 	
-	api.use('ultimate-ecmascript');
+  api.use('isobuild:compiler-plugin@1.0.0');
+  api.imply('babel-runtime@0.1.2');
+  api.imply('promise@0.4.1');
 });
 
-/**
+
 Package.registerBuildPlugin({
-  name: 'compile-ultimate',
-  sources: ['plugin.js']
+  name: 'compile-ultimate-ecmascript',
+  use: ['babel-compiler'],
+  sources: ['ultimate_ecmascript/ultimate_transpilation.js', 'ultimate_ecmascript/plugin.js']
 });
-**/
