@@ -362,8 +362,8 @@ Package.on_use(function (api, where) {
 
 
 	api.addAssets([
-	    'lib/ultimate_chart/c3/c3.min.js',
-	    'lib/ultimate_chart/c3/c3.min.css'
+	    'lib/ultimate_chart/c3.min.js',
+	    'lib/ultimate_chart/c3.min.css'
 	  ], 'client');
 		
 	api.add_files('lib/ultimate_chart/templates.html', "client");
