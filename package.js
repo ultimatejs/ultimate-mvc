@@ -38,7 +38,7 @@ Package.on_use(function (api, where) {
 	
   api.add_files([
 		'lib/ultimate/ultimate.js',
-		'lib/ultimate/extends.js',
+		'lib/ultimate/create_class.js',
 		'lib/ultimate/add_methods.js',
     'lib/ultimate/setup_misc.js',
 		'lib/ultimate/setup_form.js',
@@ -161,25 +161,24 @@ Package.on_use(function (api, where) {
 	/** MODEL PUB SUB **/
 
 	api.add_files([
+		/** ULTIMATE SUBSCRIPTION CACHE **/
+		'lib/ultimate_subscription_cache/extend_ultimate_model.js',
+		'lib/ultimate_subscription_cache/subscription_cache.js',
+		'lib/ultimate_subscription_cache/client_publisher_duck.js',
+		
 		/** ULTIMATE SUBSCRIPTION **/
 		'lib/ultimate_subscription/ultimate_subscription_behavior.js',
 		'lib/ultimate_subscription/extend_ultimate_model.js',
 
-		'lib/ultimate_subscription/subscription_cache.js',
-		'lib/ultimate_subscription/client_publisher_duck.js',
 
-
+		'lib/ultimate_subscription/publisher_factory.js',
+		'lib/ultimate_subscription/relations_publisher.js',
+		'lib/ultimate_subscription/parent_publisher.js',
+		
 		/** ULTIMATE RELATION **/
 		'lib/ultimate_relation/ultimate_relation_behavior.js',
 		'lib/ultimate_relation/extend_ultimate_model.js',
 
-
-
-		'lib/ultimate_relation/relations_publisher_factory.js',
-
-		'lib/ultimate_relation/relations_publisher.js',
-
-		'lib/ultimate_relation/parent_publisher.js',
 
 		'lib/ultimate_relation/has_belongs_publisher.js',
 		'lib/ultimate_relation/has_many_publisher.js',
@@ -287,27 +286,28 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_wizard/templates.html',
 	  	'lib/ultimate_wizard/templates.js',
 		
-
-		'lib/ultimate_events/ultimate_events.js',
 		
 		'lib/ultimate_component/ultimate_component_parent.js',
 		
 		'lib/ultimate_component/callbacks.js',
 		'lib/ultimate_component/helpers.js',
 		'lib/ultimate_component/events.js',
-		'lib/ultimate_component/animation.js',
 		
-		'lib/ultimate_component/ultimate_component.js',
-		'lib/ultimate_component/ultimate_component_model.js',
 		
-		'lib/ultimate_component/helper_shortcut.js',
 		'lib/ultimate_component/instance_methods.js',
 		'lib/ultimate_component/instance_data.js',
 		'lib/ultimate_component/mixins.js',
 		
-		'lib/ultimate_component/selected_helper.js',
-		
 		'lib/ultimate_component/templates.html',
+		
+		
+		'lib/ultimate_component/ultimate_component.js',	
+		'lib/ultimate_component_model/ultimate_component_model.js',
+		
+		'lib/ultimate_events/ultimate_events.js',
+		'lib/ultimate_animation/animation.js',
+		'lib/ultimate_helpers/helper_shortcut.js',
+		'lib/ultimate_helpers/selected_helper.js'
 
 	], 'client');
 
@@ -331,6 +331,7 @@ Package.on_use(function (api, where) {
 		'UltimateModal', 
 		'UltimateModalForm', 
 		'UltimatePrompt',
+		'UltimateModalPrompt',
 		'UltimateModalContent', 
 		'UltimateModalTabbed', 
 		'UltimateModalWizard',
@@ -378,8 +379,7 @@ Package.on_use(function (api, where) {
 		
 	api.add_files('lib/ultimate_braintree/ultimate_braintree.js');
 	api.export([
-		'UltimateBraintree',
-		'Chim'
+		'UltimateBraintree'
 	]);
 	
 	/**
