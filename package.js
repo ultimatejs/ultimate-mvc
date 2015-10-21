@@ -9,8 +9,9 @@ Package.on_use(function (api, where) {
   api.versionsFrom('METEOR@1.2');
   api.use([
 		"underscore",
-    	'templating',
-    	'blaze',
+    'templating',
+    'blaze',
+		'ejson',
 		'http',
 		'aldeed:simple-schema@1.3.0',
 		'aldeed:autoform@4.2.2',
@@ -245,7 +246,7 @@ Package.on_use(function (api, where) {
     	'lib/ultimate_exec/ultimate_exec_remote.js'
 	], ['server']);
 
-	api.export(['UltimateSync'], ['server']);
+	api.export(['UltimateSync', 'UltimateExec'], ['server']);
 
 
 	
