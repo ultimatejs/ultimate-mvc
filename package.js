@@ -13,6 +13,7 @@ Package.on_use(function (api, where) {
     'blaze',
 		'ejson',
 		'http',
+		'random',
 		'aldeed:simple-schema@1.3.0',
 		'aldeed:autoform@4.2.2',
 		'reactive-dict'
@@ -41,9 +42,11 @@ Package.on_use(function (api, where) {
 		'lib/ultimate/ultimate.js',
 		'lib/ultimate/create_class.js',
 		'lib/ultimate/add_methods.js',
+		
     'lib/ultimate/setup_misc.js',
 		'lib/ultimate/setup_form.js',
 		'lib/ultimate/setup_model.js',
+		
 		'lib/ultimate/ultimate_double.js',
 
 
@@ -51,8 +54,10 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_class/extend.js',
 		'lib/ultimate_class/behavior.js',
     'lib/ultimate_class/events.js',
+		
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
+		
 		'lib/ultimate_class/format_dates.js',
 		'lib/ultimate_class/format_money.js',
 
@@ -136,6 +141,7 @@ Package.on_use(function (api, where) {
 
 	api.imply([
 		'alanning:roles@1.2.12',
+		'check'
 	]);
 	
 	api.add_files([
@@ -283,10 +289,11 @@ Package.on_use(function (api, where) {
 	  'lib/ultimate_modal/templates.html',
 
 
-	  	'lib/ultimate_wizard/ultimate_wizard.js',
+	  'lib/ultimate_wizard/ultimate_wizard.js',
 		'lib/ultimate_wizard/templates.html',
-	  	'lib/ultimate_wizard/templates.js',
+	  'lib/ultimate_wizard/templates.js',
 		
+		'lib/ultimate_component/lookup.js',
 		
 		'lib/ultimate_component/ultimate_component_parent.js',
 		
