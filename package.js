@@ -41,18 +41,17 @@ Package.on_use(function (api, where) {
   api.add_files([
 		'lib/ultimate/ultimate.js',
 		'lib/ultimate/create_class.js',
+		'lib/ultimate/shortcut_methods.js',
 		'lib/ultimate/add_methods.js',
 		
-    'lib/ultimate/setup_misc.js',
-		'lib/ultimate/setup_form.js',
-		'lib/ultimate/setup_model.js',
 		
 		'lib/ultimate/ultimate_double.js',
-
+		
+		'lib/ultimate_clone/ultimate_clone.js',
 
 		'lib/ultimate_class/ultimate_class.js',
 		'lib/ultimate_class/extend.js',
-		'lib/ultimate_class/behavior.js',
+		'lib/ultimate_class/mixin.js',
     'lib/ultimate_class/events.js',
 		
 		'lib/ultimate_class/tracker.js',
@@ -61,7 +60,6 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_class/format_dates.js',
 		'lib/ultimate_class/format_money.js',
 
-  	'lib/ultimate_clone/ultimate_clone.js',
   	'lib/ultimate_utilities/ultimate_utilities.js',
 
 		'lib/ultimate_http/ultimate_http.js',
@@ -69,7 +67,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_http/stub_obj.js',
 		'lib/ultimate_http/meteor_call.js',
 		'lib/ultimate_http/startup.js',
-		'lib/ultimate_http/extend_ultimate_class.js'
+		'lib/ultimate_http/ultimate_extend_http_mixin.js'
   ], ['client', 'server']);
 
   api.export(['Ultimate', 'UltimateClass', 'UltimateClone']);
@@ -109,12 +107,12 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_startup/ultimate_startup.js',
 		'lib/ultimate_config/ultimate_config.js',
 		'lib/ultimate_accounts/ultimate_accounts.js',
-		'lib/ultimate_permissions/ultimate_permissions.js',
 		'lib/ultimate_router/ultimate_router.js',
 		'lib/ultimate_publish/ultimate_publish.js',
     'lib/ultimate_email/ultimate_email.js',
 
-    'lib/ultimate_behavior/ultimate_behavior.js' //depends on ultimate_facade too
+    'lib/ultimate_behavior/ultimate_behavior.js', //depends on ultimate_facade too
+		'lib/ultimate_behavior/extend_ultimate_class.js',
 	]);
 	
 	api.export([
@@ -146,13 +144,17 @@ Package.on_use(function (api, where) {
 	
 	api.add_files([
 		'lib/ultimate_form/ultimate_form.js',
+		'lib/ultimate_form/setup.js',
+		
 		'lib/ultimate_form/mongo_attributes.js',
 		'lib/ultimate_form/reactive_methods.js',
-
+		'lib/ultimate_form/submit_async.js',
+		
 		'lib/ultimate_model/ultimate_model.js',
+		'lib/ultimate_model/setup.js',
+		
 		'lib/ultimate_model/client_methods.js',
-		'lib/ultimate_model/additional_methods.js',
-
+		'lib/ultimate_model/additional_methods.js'
   	]);
 
 	api.export(['UltimateForm', 'UltimateModel']);
@@ -174,7 +176,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_subscription_cache/client_publisher_duck.js',
 		
 		/** ULTIMATE SUBSCRIPTION **/
-		'lib/ultimate_subscription/ultimate_subscription_behavior.js',
+		'lib/ultimate_subscription/ultimate_subscription_mixin.js',
 		'lib/ultimate_subscription/extend_ultimate_model.js',
 
 
@@ -183,7 +185,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_subscription/parent_publisher.js',
 		
 		/** ULTIMATE RELATION **/
-		'lib/ultimate_relation/ultimate_relation_behavior.js',
+		'lib/ultimate_relation/ultimate_relation_mixin.js',
 		'lib/ultimate_relation/extend_ultimate_model.js',
 
 
@@ -196,7 +198,8 @@ Package.on_use(function (api, where) {
 
 
 		/** ULTIMATE AGGREGATE **/
-		'lib/ultimate_aggregate/ultimate_aggregate_behavior.js',
+		'lib/ultimate_throttle/ultimate_throttle.js',
+		'lib/ultimate_aggregate/ultimate_aggregate_mixin.js',
 		'lib/ultimate_aggregate/extend_ultimate_model.js',
 		'lib/ultimate_aggregate/ultimate_aggregate.js',
 
@@ -296,6 +299,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_component/lookup.js',
 		
 		'lib/ultimate_component/ultimate_component_parent.js',
+		'lib/ultimate_component/setup.js',
 		
 		'lib/ultimate_component/callbacks.js',
 		'lib/ultimate_component/helpers.js',
@@ -315,7 +319,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_events/ultimate_events.js',
 		'lib/ultimate_animation/animation.js',
 		'lib/ultimate_helpers/helper_shortcut.js',
-		'lib/ultimate_helpers/selected_helper.js'
+		'lib/ultimate_helpers/selected_helper.js',
 
 	], 'client');
 
