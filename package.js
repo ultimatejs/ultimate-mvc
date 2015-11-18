@@ -11,14 +11,13 @@ Package.on_use(function (api, where) {
 		"underscore",
     'templating',
     'blaze',
-		'ejson',
 		'http',
 		'random',
 		'aldeed:simple-schema@1.3.0',
 		'aldeed:autoform@4.2.2',
 		'reactive-dict'
 	]);
-	api.imply(['reactive-dict']);
+	api.imply(['reactive-dict', 'ejson']);
 
 	api.imply([
 		'aldeed:simple-schema@1.3.0',
@@ -166,7 +165,11 @@ Package.on_use(function (api, where) {
 	], ['client']);
 		
 		
-		
+	/** MODEL COLLECTION HOOKS **/
+		api.add_files([
+			'lib/ultimate_collection_hooks/ultimate_collection_hooks.js',
+		]);
+	
 	/** MODEL PUB SUB **/
 
 	api.add_files([
