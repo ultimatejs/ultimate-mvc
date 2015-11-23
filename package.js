@@ -130,7 +130,7 @@ Package.on_use(function (api, where) {
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
 	api.use([
-		'ultimateide:collection-hooks@0.7.14',
+		'matb33:collection-hooks@0.8.1',
 		'smeevil:session-store@1.0.0',
 		'meteorhacks:aggregate@1.2.1',
 		'meteorhacks:subs-manager@1.3.0'
