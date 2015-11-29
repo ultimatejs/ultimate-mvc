@@ -73,7 +73,120 @@ Package.on_use(function (api, where) {
 	
 	
 	
+	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
+
+	api.use([
+		'matb33:collection-hooks@0.8.1',
+		'smeevil:session-store@1.0.0',
+		'meteorhacks:aggregate@1.2.1',
+		'meteorhacks:subs-manager@1.3.0'
+	]);
+
+	api.imply([
+		'alanning:roles@1.2.12',
+		'check'
+	]);
+
+	api.add_files([
+		'lib/ultimate_form/ultimate_form.js',
+		'lib/ultimate_form/form_mixin.js',
 	
+		'lib/ultimate_form/mongo_attributes.js',
+		'lib/ultimate_form/reactive_methods.js',
+		'lib/ultimate_form/submit_async.js',
+	
+		'lib/ultimate_model/ultimate_model.js',
+		'lib/ultimate_model/model_mixin.js',
+	
+		'lib/ultimate_model/client_methods.js',
+		'lib/ultimate_model/additional_methods.js'
+		]);
+
+	api.export(['UltimateForm', 'UltimateModel']);
+
+
+	api.add_files([
+		'lib/ultimate_form/templates.html',
+		'lib/ultimate_form/templates.js',
+	], ['client']);
+	
+	
+	/** MODEL COLLECTION HOOKS **/
+	api.add_files([
+		'lib/ultimate_collection_hooks/ultimate_collection_hooks.js',
+	]);
+
+	/** MODEL PUB SUB **/
+
+	api.add_files([
+		/** ULTIMATE SUBSCRIPTION **/
+		'lib/ultimate_subscription/ultimate_subscription_mixin.js',
+		'lib/ultimate_subscription/extend_ultimate_model.js',
+
+
+		'lib/ultimate_subscription/publisher_factory.js',
+		'lib/ultimate_subscription/relations_publisher.js',
+		'lib/ultimate_subscription/parent_publisher.js',
+	
+	
+		/** ULTIMATE SUBSCRIPTION CACHE **/
+		'lib/ultimate_subscription_cache/extend_ultimate_model.js',
+		'lib/ultimate_subscription_cache/subscription_mixin.js',
+		'lib/ultimate_subscription_cache/subscription_cache.js',
+		'lib/ultimate_subscription_cache/client_publisher_duck.js',
+	
+	
+		/** ULTIMATE SUBSCRIPTION INTERVAL **/
+		'lib/ultimate_subscription_interval/extend_ultimate_model.js',
+	
+		/** ULTIMATE RELATION **/
+		'lib/ultimate_relation/ultimate_relation_mixin.js',
+		'lib/ultimate_relation/extend_ultimate_model.js',
+
+
+		'lib/ultimate_relation/has_belongs_publisher.js',
+		'lib/ultimate_relation/has_many_publisher.js',
+		'lib/ultimate_relation/belongs_to_publisher.js',
+		'lib/ultimate_relation/through_publisher.js',
+		'lib/ultimate_relation/many_many_publisher.js',
+
+
+
+		/** ULTIMATE AGGREGATE **/
+		'lib/ultimate_throttle/ultimate_throttle.js',
+		'lib/ultimate_aggregate/ultimate_aggregate_mixin.js',
+		'lib/ultimate_aggregate/extend_ultimate_model.js',
+		'lib/ultimate_aggregate/ultimate_aggregate.js',
+
+
+		'lib/ultimate_aggregate/helper.js',
+		'lib/ultimate_aggregate/helper_class.js',
+		'lib/ultimate_aggregate/helper_instance.js',
+		'lib/ultimate_aggregate/helper_groupby.js',
+
+		'lib/ultimate_aggregate/observer.js',
+		'lib/ultimate_aggregate/observer_collection.js',
+		'lib/ultimate_aggregate/observer_relation.js',
+
+		'lib/ultimate_aggregate/publisher_collection.js',
+	], ['client', 'server']);
+
+
+	api.add_files([
+		'lib/ultimate_user/ultimate_user.js'
+
+		], ['client', 'server']);
+	
+	api.export(['UltimateUser']);
+
+
+
+	api.add_files([
+		'lib/ultimate_app/ultimate_app.js'
+		], ['client', 'server']);
+	
+	api.export(['UltimateApp']);
+
 	
 	
 	/** ULTIMATE_REACTIVE **/
@@ -82,6 +195,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_reactive/ultimate_reactive.js',
 		'lib/ultimate_reactive/autorun_subscribe.js',
 		'lib/ultimate_reactive/get_autorun_subscribe.js',
+		'lib/ultimate_reactive/model_mixin.js'
 	], ['client']);
 	
 	
@@ -127,116 +241,7 @@ Package.on_use(function (api, where) {
 		'UltimateBehavior'
 	]);
 	
-	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
-	api.use([
-		'matb33:collection-hooks@0.8.1',
-		'smeevil:session-store@1.0.0',
-		'meteorhacks:aggregate@1.2.1',
-		'meteorhacks:subs-manager@1.3.0'
-	]);
-
-	api.imply([
-		'alanning:roles@1.2.12',
-		'check'
-	]);
-	
-	api.add_files([
-		'lib/ultimate_form/ultimate_form.js',
-		'lib/ultimate_form/setup.js',
-		
-		'lib/ultimate_form/mongo_attributes.js',
-		'lib/ultimate_form/reactive_methods.js',
-		'lib/ultimate_form/submit_async.js',
-		
-		'lib/ultimate_model/ultimate_model.js',
-		'lib/ultimate_model/setup.js',
-		
-		'lib/ultimate_model/client_methods.js',
-		'lib/ultimate_model/additional_methods.js'
-  	]);
-
-	api.export(['UltimateForm', 'UltimateModel']);
-
-
-	api.add_files([
-		'lib/ultimate_form/templates.html',
-		'lib/ultimate_form/templates.js',
-	], ['client']);
-		
-		
-	/** MODEL COLLECTION HOOKS **/
-		api.add_files([
-			'lib/ultimate_collection_hooks/ultimate_collection_hooks.js',
-		]);
-	
-	/** MODEL PUB SUB **/
-
-	api.add_files([
-		/** ULTIMATE SUBSCRIPTION CACHE **/
-		'lib/ultimate_subscription_cache/extend_ultimate_model.js',
-		'lib/ultimate_subscription_cache/subscription_cache.js',
-		'lib/ultimate_subscription_cache/client_publisher_duck.js',
-		
-		/** ULTIMATE SUBSCRIPTION **/
-		'lib/ultimate_subscription/ultimate_subscription_mixin.js',
-		'lib/ultimate_subscription/extend_ultimate_model.js',
-
-
-		'lib/ultimate_subscription/publisher_factory.js',
-		'lib/ultimate_subscription/relations_publisher.js',
-		'lib/ultimate_subscription/parent_publisher.js',
-		
-		/** ULTIMATE RELATION **/
-		'lib/ultimate_relation/ultimate_relation_mixin.js',
-		'lib/ultimate_relation/extend_ultimate_model.js',
-
-
-		'lib/ultimate_relation/has_belongs_publisher.js',
-		'lib/ultimate_relation/has_many_publisher.js',
-		'lib/ultimate_relation/belongs_to_publisher.js',
-		'lib/ultimate_relation/through_publisher.js',
-		'lib/ultimate_relation/many_many_publisher.js',
-
-
-
-		/** ULTIMATE AGGREGATE **/
-		'lib/ultimate_throttle/ultimate_throttle.js',
-		'lib/ultimate_aggregate/ultimate_aggregate_mixin.js',
-		'lib/ultimate_aggregate/extend_ultimate_model.js',
-		'lib/ultimate_aggregate/ultimate_aggregate.js',
-
-
-		'lib/ultimate_aggregate/helper.js',
-		'lib/ultimate_aggregate/helper_class.js',
-		'lib/ultimate_aggregate/helper_instance.js',
-		'lib/ultimate_aggregate/helper_groupby.js',
-
-		'lib/ultimate_aggregate/observer.js',
-		'lib/ultimate_aggregate/observer_collection.js',
-		'lib/ultimate_aggregate/observer_relation.js',
-
-		'lib/ultimate_aggregate/publisher_collection.js',
-  	], ['client', 'server']);
-
-
-
-
-
-	api.add_files([
-		'lib/ultimate_user/ultimate_user.js'
-
-  	], ['client', 'server']);
-		
-  api.export(['UltimateUser']);
-
-
-
-	api.add_files([
-		'lib/ultimate_app/ultimate_app.js'
-  	], ['client', 'server']);
-		
-  api.export(['UltimateApp']);
 		
 		
 		
@@ -281,6 +286,7 @@ Package.on_use(function (api, where) {
 
 	api.addFiles([
 		'lib/ultimate_modal/ultimate_modal.js',
+		'lib/ultimate_modal/public_interface.js',
 		'lib/ultimate_modal/ultimate_modal_form.js',
 		'lib/ultimate_modal/ultimate_modal_content.js',
 		
@@ -302,7 +308,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_component/lookup.js',
 		
 		'lib/ultimate_component/ultimate_component_parent.js',
-		'lib/ultimate_component/setup.js',
+		'lib/ultimate_component/component_mixin.js',
 		
 		'lib/ultimate_component/callbacks.js',
 		'lib/ultimate_component/helpers.js',
@@ -337,6 +343,7 @@ Package.on_use(function (api, where) {
 	]);
 
 	api.addFiles([
+		'lib/ultimate_datatable_component/model_mixin.js',
     	'lib/ultimate_datatable_component/ultimate_datatable_component.html'
 	], ['client']);
 
