@@ -171,22 +171,6 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_aggregate/publisher_collection.js',
 	], ['client', 'server']);
 
-
-	api.add_files([
-		'lib/ultimate_user/ultimate_user.js'
-
-		], ['client', 'server']);
-	
-	api.export(['UltimateUser']);
-
-
-
-	api.add_files([
-		'lib/ultimate_app/ultimate_app.js'
-		], ['client', 'server']);
-	
-	api.export(['UltimateApp']);
-
 	
 	
 	/** ULTIMATE_REACTIVE **/
@@ -368,6 +352,23 @@ Package.on_use(function (api, where) {
 		'UltimateDatatableComponent'
 	], ['client', 'server']);
 	
+	
+	/** SPECIALIZED MODEL CLASSES **/
+	
+	api.add_files([
+		'lib/ultimate_user/ultimate_user.js'
+
+		], ['client', 'server']);
+	
+	api.export(['UltimateUser']);
+
+
+
+	api.add_files([
+		'lib/ultimate_app/ultimate_app.js'
+		], ['client', 'server']);
+	
+	api.export(['UltimateApp']);
 	
 	
 	/** ULTIMATE CHART **/
