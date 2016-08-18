@@ -1,5 +1,11 @@
 <template name="ultimate_datatable_component">
-	
+	{{#if header_template}}
+		{{> Template.dynamic template=header_template}}
+	{{/if}}
+
 	{{>tabular table=datatable class=getCssClasses limit=getLimit selector=selector}}
-	
+
+	{{#if footer_template}}
+		{{> Template.dynamic template=footer_template}}
+	{{/if}}
 </template>
